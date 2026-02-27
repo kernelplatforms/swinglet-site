@@ -12,7 +12,8 @@
       --card: #1e293b;
       --text: #e2e8f0;
       --muted: #94a3b8;
-      --accent: #a855f7;
+      --accent: #571432;
+      --accent-hover: #7a1c48;
       --border: #334155;
     }
 
@@ -35,9 +36,11 @@
     a {
       color: var(--accent);
       text-decoration: none;
+      font-weight: 500;
     }
 
     a:hover {
+      color: var(--accent-hover);
       text-decoration: underline;
     }
 
@@ -49,6 +52,12 @@
       background: var(--card);
       border: 1px solid var(--border);
       font-size: 14px;
+      transition: 0.2s ease;
+    }
+
+    .back:hover {
+      border-color: var(--accent);
+      color: var(--accent);
     }
 
     h1 {
@@ -88,10 +97,10 @@
     }
 
     .callout {
-      background: var(--card);
-      border: 1px solid var(--border);
+      background: #162033;
+      border-left: 4px solid var(--accent);
       padding: 16px;
-      border-radius: 10px;
+      border-radius: 8px;
       margin-top: 16px;
     }
 
