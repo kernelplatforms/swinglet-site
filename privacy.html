@@ -8,220 +8,369 @@
 
   <style>
     :root {
-      --bg: #0f172a;
-      --card: #1e293b;
-      --text: #e2e8f0;
-      --muted: #94a3b8;
+      /* Align closer to your index.html dark palette */
+      --bg: #020617;           /* slate-950 */
+      --panel: rgba(255,255,255,0.05);
+      --panel-2: rgba(255,255,255,0.03);
+      --text: rgba(226,232,240,0.96);   /* slate-200 */
+      --muted: rgba(148,163,184,0.92);  /* slate-400 */
+      --border: rgba(255,255,255,0.10);
+
+      /* Brand accent */
       --accent: #571432;
       --accent-hover: #7a1c48;
-      --border: #334155;
+
+      /* Accent text (more readable than pure accent on dark bg) */
+      --accent-soft: rgba(253, 164, 186, 0.95); /* rose-ish soft highlight */
     }
 
     * { box-sizing: border-box; }
 
     body {
       margin: 0;
-      background: var(--bg);
+      background: radial-gradient(900px 500px at 30% 10%, rgba(87,20,50,0.20), transparent 60%),
+                  radial-gradient(900px 500px at 90% 30%, rgba(255,255,255,0.06), transparent 55%),
+                  var(--bg);
       color: var(--text);
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       line-height: 1.7;
     }
 
     .container {
-      max-width: 900px;
+      max-width: 920px;
       margin: auto;
-      padding: 32px 20px;
+      padding: 28px 20px 36px;
+    }
+
+    /* Simple top bar to match index feel */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      background: rgba(2,6,23,0.82);
+      border-bottom: 1px solid var(--border);
+    }
+    .topbar-inner{
+      max-width: 920px;
+      margin: auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .brand {
+      display:flex;
+      align-items:center;
+      gap:10px;
+      color: rgba(255,255,255,0.92);
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+    .dot{
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 3px rgba(87,20,50,0.20);
     }
 
     a {
-      color: var(--accent);
+      color: rgba(226,232,240,0.95);
       text-decoration: none;
       font-weight: 500;
     }
-
     a:hover {
-      color: var(--accent-hover);
+      color: rgba(255,255,255,0.95);
       text-decoration: underline;
     }
 
     .back {
-      display: inline-block;
-      margin-bottom: 24px;
-      padding: 8px 14px;
-      border-radius: 8px;
-      background: var(--card);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      background: var(--panel);
       border: 1px solid var(--border);
       font-size: 14px;
       transition: 0.2s ease;
     }
-
     .back:hover {
-      border-color: var(--accent);
-      color: var(--accent);
+      border-color: rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.07);
+      text-decoration: none;
     }
 
     h1 {
-      font-size: 32px;
-      margin-bottom: 10px;
+      font-size: 34px;
+      margin: 18px 0 8px;
+      color: rgba(255,255,255,0.96);
+      letter-spacing: -0.02em;
     }
 
     h2 {
-      margin-top: 40px;
+      margin-top: 34px;
       font-size: 20px;
+      color: rgba(255,255,255,0.92);
       border-bottom: 1px solid var(--border);
-      padding-bottom: 6px;
+      padding-bottom: 8px;
     }
 
     h3 {
-      margin-top: 20px;
+      margin-top: 18px;
       font-size: 16px;
-      color: var(--accent);
+      color: var(--accent-soft); /* readable highlight */
     }
 
-    p {
-      margin: 12px 0;
-    }
+    p { margin: 12px 0; color: var(--text); }
 
-    ul {
-      margin: 10px 0 10px 20px;
-    }
-
-    li {
-      margin: 6px 0;
-    }
+    ul { margin: 10px 0 10px 20px; padding: 0; }
+    li { margin: 6px 0; color: var(--text); }
 
     .meta {
       color: var(--muted);
       font-size: 14px;
-      margin-bottom: 20px;
+      margin-bottom: 14px;
+    }
+
+    .card {
+      margin-top: 18px;
+      background: var(--panel-2);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px;
     }
 
     .callout {
-      background: #162033;
-      border-left: 4px solid var(--accent);
+      background: rgba(87,20,50,0.14);
+      border: 1px solid rgba(87,20,50,0.28);
       padding: 16px;
-      border-radius: 8px;
+      border-radius: 12px;
       margin-top: 16px;
+      color: rgba(255,255,255,0.92);
+    }
+    .callout strong { color: rgba(255,255,255,0.98); }
+
+    .small {
+      color: var(--muted);
+      font-size: 14px;
     }
 
     footer {
-      margin-top: 50px;
+      margin-top: 36px;
       border-top: 1px solid var(--border);
-      padding-top: 20px;
+      padding-top: 18px;
       color: var(--muted);
       font-size: 14px;
+    }
+
+    /* nicer links in content */
+    .content a {
+      color: rgba(253,164,186,0.95);
+    }
+    .content a:hover {
+      color: rgba(255,255,255,0.96);
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="brand" aria-label="Swinglet">
+        <span class="dot" aria-hidden="true"></span>
+        <span>Swinglet</span>
+      </div>
+      <a href="https://www.swinglet.app" class="back" aria-label="Back to Swinglet">
+        ← Back to Swinglet
+      </a>
+    </div>
+  </div>
 
-    <a href="https://www.swinglet.app" class="back">← Back to Swinglet</a>
-
+  <main class="container content">
     <h1>Privacy Policy</h1>
 
     <div class="meta">
-      Effective Date: 1 January 2026<br>
-      Last Updated: 1 January 2026
+      <div><strong>Effective Date:</strong> 1 January 2026</div>
+      <div><strong>Last Updated:</strong> 1 January 2026</div>
     </div>
 
-    <p>
-      Kernel Platforms (“Swinglet”, “we”, “our”, “us”) operates the Swinglet mobile application (“App”), 
-      a community platform for adults interested in ethical non-monogamy (ENM), polyamory, and open relationship lifestyles.
-    </p>
+    <div class="card">
+      <p>
+        Kernel Platforms (“Swinglet”, “we”, “our”, “us”) operates the Swinglet mobile application (“App”),
+        a community platform for adults interested in ethical non-monogamy (ENM), polyamory, and open relationship lifestyles.
+      </p>
 
-    <p>
-      This Privacy Policy explains how we collect, use, store, protect, and moderate personal data when you use the App.
-      The App is currently available in India.
-    </p>
+      <p>
+        This Privacy Policy explains how we collect, use, store, protect, and moderate personal data when you use the App.
+        The App is currently available in India.
+      </p>
 
-    <h2>1. Eligibility</h2>
-    <p><strong>Swinglet is strictly for users 18 years or older.</strong></p>
-    <p>We do not knowingly collect data from minors. Accounts identified as underage will be removed.</p>
-
-    <h2>2. Information We Collect</h2>
-
-    <h3>A. Account Information</h3>
-    <ul>
-      <li>Name or display name</li>
-      <li>Email address</li>
-      <li>Date of birth</li>
-      <li>Gender and relationship status</li>
-    </ul>
-
-    <h3>B. Profile & Community Information</h3>
-    <ul>
-      <li>Orientation and relationship preferences</li>
-      <li>Interests and kinks</li>
-      <li>Profile photos and uploaded images</li>
-      <li>Posts and private messages</li>
-    </ul>
-
-    <p>
-      Some profile information may be considered sensitive personal data and is processed only with your consent.
-    </p>
-
-    <h3>C. Location Information</h3>
-    <p>We collect general location to enable nearby discovery features. We do not collect background location.</p>
-
-    <h3>D. Technical Information</h3>
-    <ul>
-      <li>Device type</li>
-      <li>IP address</li>
-      <li>Usage logs</li>
-      <li>Crash reports</li>
-    </ul>
-
-    <p>We use Firebase services for authentication, analytics, storage, and push notifications.</p>
-
-    <h2>3. How We Use Information</h2>
-    <ul>
-      <li>To operate and improve the App</li>
-      <li>Enable messaging and discovery</li>
-      <li>Process subscriptions via Apple & Google</li>
-      <li>Moderate and maintain safety</li>
-      <li>Provide support</li>
-    </ul>
-
-    <h2>4. User Content & Active Moderation</h2>
-    <p>Swinglet allows user-generated content including images and messaging.</p>
-
-    <div class="callout">
-      Swinglet actively reviews reported content and may remove posts or suspend accounts that violate community guidelines.
+      <p class="small">
+        We aim to comply with the Digital Personal Data Protection Act, 2023 (India) and other applicable laws.
+      </p>
     </div>
 
-    <p>We do not permit illegal content, exploitative material, content involving minors, or transactional sexual services.</p>
+    <section id="eligibility">
+      <h2>1. Eligibility</h2>
+      <p><strong>Swinglet is strictly for users 18 years or older.</strong></p>
+      <p>
+        We do not knowingly collect data from minors. If we become aware a user is under 18,
+        we will suspend and remove the account.
+      </p>
+    </section>
 
-    <h2>5. Data Sharing</h2>
-    <p>We do not sell personal data.</p>
-    <p>We may share limited data with service providers such as Firebase and cloud hosting partners.</p>
+    <section id="data-we-collect">
+      <h2>2. Information We Collect</h2>
 
-    <h2>6. Data Retention</h2>
-    <p>Data is retained only as long as necessary to operate the App and comply with legal obligations.</p>
-    <p>You may delete your account at any time.</p>
+      <h3>A. Account Information</h3>
+      <ul>
+        <li>Name or display name</li>
+        <li>Email address</li>
+        <li>Date of birth (for age confirmation)</li>
+        <li>Gender and relationship status</li>
+      </ul>
 
-    <h2>7. Your Rights</h2>
-    <p>
-      You may request access, correction, or deletion of your data by contacting:
-      <a href="mailto:support@swinglet.app">support@swinglet.app</a>
-    </p>
+      <h3>B. Profile &amp; Community Information</h3>
+      <ul>
+        <li>Orientation and relationship preferences</li>
+        <li>Interests and kinks</li>
+        <li>Profile photos and uploaded images</li>
+        <li>Posts and private messages</li>
+      </ul>
 
-    <h2>8. Security</h2>
-    <p>We use encryption, secure authentication, reporting tools, and admin moderation to safeguard user data.</p>
+      <p>
+        Some profile information may be considered sensitive personal data and is processed only with your consent.
+      </p>
 
-    <h2>9. Grievance Officer</h2>
-    <p>
-      Naveen Yadav<br>
-      Kernel Platforms<br>
-      Gurgaon, Haryana, India<br>
-      <a href="mailto:support@swinglet.app">support@swinglet.app</a>
-    </p>
+      <h3>C. Location Information</h3>
+      <p>
+        We collect general location to enable nearby discovery features.
+        We do not collect background location when the App is not actively in use.
+      </p>
+
+      <h3>D. Technical Information</h3>
+      <ul>
+        <li>Device type</li>
+        <li>IP address</li>
+        <li>Usage logs</li>
+        <li>Crash reports</li>
+      </ul>
+
+      <p>
+        We use Firebase services for authentication, analytics, cloud storage, and push notifications.
+      </p>
+    </section>
+
+    <section id="how-we-use">
+      <h2>3. How We Use Information</h2>
+
+      <ul>
+        <li>To operate and improve the App</li>
+        <li>Enable messaging and discovery</li>
+        <li>Process subscriptions via Apple &amp; Google</li>
+        <li>Moderate and maintain safety</li>
+        <li>Provide support</li>
+      </ul>
+
+      <p>
+        By creating an account and using the App, you provide explicit consent for the collection and processing of your personal
+        and sensitive personal data for the purposes described in this Policy.
+      </p>
+    </section>
+
+    <section id="ugc">
+      <h2>4. User Content &amp; Active Moderation</h2>
+      <p>Swinglet allows user-generated content including images and messaging.</p>
+
+      <div class="callout">
+        <strong>Active moderation:</strong> Swinglet actively reviews reported content and may remove posts, restrict features,
+        or suspend accounts that violate community guidelines.
+      </div>
+
+      <p>
+        We do not permit illegal content, exploitative material, content involving minors, or transactional sexual services.
+      </p>
+    </section>
+
+    <section id="payments">
+      <h2>5. Subscriptions &amp; Payments</h2>
+      <p>
+        Premium features may be purchased through the Apple App Store and Google Play Store.
+        <strong>All payments are processed directly by Apple or Google.</strong>
+        We do not collect or store your card or payment information.
+      </p>
+    </section>
+
+    <section id="sharing">
+      <h2>6. Data Sharing</h2>
+      <p>We do not sell personal data.</p>
+      <p>
+        We may share limited data with service providers such as Firebase and cloud hosting partners
+        to operate and secure the App. We may also disclose information where required by applicable law.
+      </p>
+    </section>
+
+    <section id="retention">
+      <h2>7. Data Retention</h2>
+      <p>
+        We retain personal data only as long as necessary to provide the App, maintain safety and moderation records,
+        and comply with legal obligations.
+      </p>
+
+      <p><strong>Account deletion:</strong> You may delete your account at any time from within the App settings.</p>
+      <p class="small">
+        If you are unable to access your account, you may request deletion by contacting
+        <a href="mailto:support@swinglet.app">support@swinglet.app</a>.
+      </p>
+
+      <ul>
+        <li>Your profile becomes inaccessible to other users.</li>
+        <li>Personal data is deleted or anonymised within a reasonable period.</li>
+        <li>Some records may be retained for fraud prevention, safety enforcement, or legal compliance.</li>
+      </ul>
+    </section>
+
+    <section id="rights">
+      <h2>8. Your Rights</h2>
+      <p>
+        Subject to applicable law, you may request access, correction, or deletion of your data by contacting:
+        <a href="mailto:support@swinglet.app">support@swinglet.app</a>
+      </p>
+    </section>
+
+    <section id="security">
+      <h2>9. Security</h2>
+      <p>
+        We use reasonable safeguards such as encryption, secure authentication, reporting tools, and admin moderation to safeguard user data.
+        However, no system can guarantee absolute security.
+      </p>
+    </section>
+
+    <section id="international">
+      <h2>10. International Data Processing</h2>
+      <p>
+        We use cloud service providers including Firebase, which may process data outside India.
+        Where applicable, appropriate safeguards are implemented in accordance with applicable data protection laws.
+      </p>
+    </section>
+
+    <section id="grievance">
+      <h2>11. Grievance Officer</h2>
+      <p>
+        Naveen Yadav<br>
+        Kernel Platforms<br>
+        Gurgaon, Haryana, India<br>
+        <a href="mailto:support@swinglet.app">support@swinglet.app</a>
+      </p>
+    </section>
 
     <footer>
       © 2026 Kernel Platforms. All rights reserved.
     </footer>
-
-  </div>
+  </main>
 </body>
 </html>
