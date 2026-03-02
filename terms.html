@@ -1,140 +1,364 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en-IN">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Terms of Use – Swinglet</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Swinglet Terms of Use</title>
+  <meta name="description" content="Swinglet Terms of Use (Terms & Conditions) - Kernel Platforms" />
+
   <style>
-    body { font-family: 'Inter', sans-serif; }
-    h1,h2,h3,h4,h5,h6,.font-lora { font-family: 'Lora', serif; }
+    :root {
+      --bg: #020617;           /* slate-950 */
+      --panel: rgba(255,255,255,0.05);
+      --panel-2: rgba(255,255,255,0.03);
+      --text: rgba(226,232,240,0.96);
+      --muted: rgba(148,163,184,0.90);
+      --border: rgba(255,255,255,0.10);
+
+      --accent: #571432;       /* brand */
+      --accent-soft: rgba(253,164,186,0.95);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: radial-gradient(900px 500px at 30% 10%, rgba(87,20,50,0.20), transparent 60%),
+                  radial-gradient(900px 500px at 90% 30%, rgba(255,255,255,0.06), transparent 55%),
+                  var(--bg);
+      color: var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      line-height: 1.7;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      background: rgba(2,6,23,0.82);
+      border-bottom: 1px solid var(--border);
+    }
+    .topbar-inner{
+      max-width: 920px;
+      margin: auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .brand {
+      display:flex;
+      align-items:center;
+      gap:10px;
+      color: rgba(255,255,255,0.92);
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      text-decoration: none;
+    }
+    .dot{
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 3px rgba(87,20,50,0.20);
+    }
+
+    .back {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      font-size: 14px;
+      color: rgba(226,232,240,0.95);
+      text-decoration: none;
+      transition: 0.2s ease;
+    }
+    .back:hover {
+      border-color: rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.07);
+      text-decoration: none;
+    }
+
+    a { color: var(--accent-soft); text-decoration: none; }
+    a:hover { text-decoration: underline; color: rgba(255,255,255,0.96); }
+
+    .container {
+      max-width: 920px;
+      margin: auto;
+      padding: 28px 20px 40px;
+    }
+
+    h1 {
+      font-size: 34px;
+      margin: 18px 0 8px;
+      color: rgba(255,255,255,0.96);
+      letter-spacing: -0.02em;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 14px;
+    }
+
+    .card {
+      margin-top: 18px;
+      background: var(--panel-2);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px;
+    }
+
+    h2 {
+      margin-top: 34px;
+      font-size: 20px;
+      color: rgba(255,255,255,0.92);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 8px;
+    }
+
+    h3 {
+      margin-top: 18px;
+      font-size: 16px;
+      color: var(--accent-soft);
+    }
+
+    p { margin: 12px 0; color: var(--text); }
+
+    ul { margin: 10px 0 10px 20px; padding: 0; }
+    li { margin: 6px 0; color: var(--text); }
+
+    .callout {
+      background: rgba(87,20,50,0.14);
+      border: 1px solid rgba(87,20,50,0.28);
+      padding: 16px;
+      border-radius: 12px;
+      margin-top: 16px;
+      color: rgba(255,255,255,0.92);
+    }
+    .callout strong { color: rgba(255,255,255,0.98); }
+
+    footer {
+      margin-top: 36px;
+      border-top: 1px solid var(--border);
+      padding-top: 18px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .small { color: var(--muted); font-size: 14px; }
+
+    code {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.10);
+      padding: 2px 6px;
+      border-radius: 8px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 0.95em;
+    }
   </style>
 </head>
-<body class="bg-slate-950 text-gray-100">
-  <header class="border-b border-white/10 bg-slate-950/90 backdrop-blur">
-    <div class="max-w-3xl mx-auto px-4 py-4 flex items-center justify-between">
-      <a href="/" class="text-xl font-lora font-bold text-white">Swinglet</a>
-      <span class="text-xs text-gray-400">Terms of Use</span>
+
+<body>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="https://www.swinglet.app" aria-label="Swinglet Home">
+        <span class="dot" aria-hidden="true"></span>
+        <span>Swinglet</span>
+      </a>
+      <a href="https://www.swinglet.app" class="back" aria-label="Back to Swinglet">
+        ← Back to Swinglet
+      </a>
     </div>
-  </header>
+  </div>
 
-  <main class="max-w-3xl mx-auto px-4 py-10 space-y-6">
-    <h1 class="text-3xl font-lora font-bold mb-2">Terms of Use</h1>
-    <p class="text-sm text-gray-400 mb-4"><strong>Effective Date:</strong> 1 January 2026</p>
+  <main class="container">
+    <h1>Terms of Use</h1>
 
-    <p>
-      These Terms of Use (“Terms”) govern your access to and use of the Swinglet mobile application (“App”) and any
-      related services provided by Swinglet Digital Private Limited (“Swinglet”, “we”, “our”). By creating an account
-      or using the App, you agree to be bound by these Terms and our Privacy Policy.
-    </p>
+    <div class="meta">
+      <div><strong>Effective Date:</strong> 1 January 2026</div>
+      <div><strong>Last Updated:</strong> 1 January 2026</div>
+    </div>
 
-    <h2 class="text-2xl font-lora font-semibold mt-6">1. Eligibility</h2>
-    <p>
-      You must be at least 18 years of age and legally competent under Indian law to use the App. By using the App, you
-      represent and warrant that you meet these requirements and that you are not prohibited by any applicable law or
-      order from using such services.
-    </p>
+    <div class="card">
+      <p>
+        These Terms of Use (“Terms”) govern your access to and use of the Swinglet mobile application (“App”) and related services
+        operated by Kernel Platforms (“Swinglet”, “we”, “our”, “us”).
+      </p>
+      <p>
+        By accessing or using the App, you agree to these Terms and our <a href="/privacy.html">Privacy Policy</a>.
+        If you do not agree, do not use the App.
+      </p>
+      <p class="small">
+        The App is currently intended for users in India.
+      </p>
+    </div>
 
-    <h2 class="text-2xl font-lora font-semibold mt-6">2. Nature of Service</h2>
-    <p>
-      Swinglet is a social networking platform designed for adults exploring consensual relationship structures such as
-      swinging, ethical non-monogamy (ENM) and polyamory. The App is not an escort service, dating service, or platform
-      for the sale or purchase of sexual services.
-    </p>
+    <section id="eligibility">
+      <h2>1. Eligibility</h2>
+      <p><strong>You must be at least 18 years old to use Swinglet.</strong></p>
+      <ul>
+        <li>You confirm you are 18+ and legally capable of entering into these Terms under applicable law.</li>
+        <li>We do not permit minors on the App. If an account is found to be underage, it will be removed.</li>
+      </ul>
+    </section>
 
-    <h2 class="text-2xl font-lora font-semibold mt-6">3. Your Account</h2>
-    <p>
-      You are responsible for maintaining the confidentiality of your login credentials and for all activities that
-      occur under your account. You agree to notify us promptly of any unauthorised use or security breach.
-    </p>
+    <section id="service">
+      <h2>2. The Service</h2>
+      <p>
+        Swinglet is a consent-first community platform for adults exploring ethical non-monogamy (ENM), polyamory, and open relationships.
+        The App enables profile creation, posting, discovery of nearby users, messaging, and community interaction.
+      </p>
+      <div class="callout">
+        <strong>No escorting or transactional services.</strong> Swinglet does not facilitate prostitution, escort services, trafficking,
+        or any transactional sexual services.
+      </div>
+    </section>
 
-    <h2 class="text-2xl font-lora font-semibold mt-6">4. Community Guidelines & Acceptable Use</h2>
-    <p>You agree to use the App in a lawful, respectful and consensual manner. You must not:</p>
-    <ul class="list-disc list-inside space-y-1">
-      <li>post or share content that is defamatory, obscene, hateful, harassing, or otherwise unlawful under Indian law;</li>
-      <li>promote or engage in non-consensual, exploitative, or abusive behaviour;</li>
-      <li>use the App to solicit, arrange, or facilitate prostitution, trafficking, or any commercial sex work;</li>
-      <li>impersonate any person or misrepresent your identity, age, or relationship status;</li>
-      <li>upload content that violates intellectual property rights or privacy rights of others;</li>
-      <li>attempt to bypass, disable, or interfere with security or safety features of the App.</li>
-    </ul>
-    <p>
-      We may remove content or suspend/terminate accounts that violate these Terms, our policies, or applicable laws.
-    </p>
+    <section id="account">
+      <h2>3. Accounts &amp; Security</h2>
+      <ul>
+        <li>You are responsible for maintaining the confidentiality of your account credentials.</li>
+        <li>You agree to provide accurate information and to keep it updated.</li>
+        <li>You may not create accounts for others without permission or impersonate any person or entity.</li>
+        <li>Notify us immediately if you suspect unauthorized access to your account.</li>
+      </ul>
+      <p>
+        Support: <a href="mailto:support@swinglet.app">support@swinglet.app</a>
+      </p>
+    </section>
 
-    <h2 class="text-2xl font-lora font-semibold mt-6">5. Content Ownership & Licence</h2>
-    <p>
-      You retain ownership of content you submit or post in the App. By posting, you grant Swinglet a non-exclusive,
-      worldwide, royalty-free licence to host, store, display, and distribute such content within the App for the
-      purpose of operating and improving the service.
-    </p>
+    <section id="community">
+      <h2>4. Community Standards &amp; User Conduct</h2>
+      <p>You agree to use Swinglet respectfully and lawfully. You must not:</p>
+      <ul>
+        <li>Post or share illegal content or content that violates applicable law.</li>
+        <li>Share non-consensual, exploitative, or intimate content of another person.</li>
+        <li>Post nudity or explicit sexual content (including pornographic content).</li>
+        <li>Engage in harassment, threats, hate speech, or targeted abuse.</li>
+        <li>Solicit or facilitate escorting, prostitution, or trafficking.</li>
+        <li>Share content involving minors or attempt to engage minors.</li>
+        <li>Spam, scam, phish, or otherwise attempt fraud.</li>
+        <li>Share someone else’s private information without consent.</li>
+      </ul>
 
-    <h2 class="text-2xl font-lora font-semibold mt-6">6. Privacy</h2>
-    <p>
-      Our collection and use of personal data is described in the <a href="/privacy.html" class="text-rose-300 underline">Privacy Policy</a>.
-      By using the App, you consent to such collection and use. The App includes features such as screenshot protection
-      to enhance privacy, but no technical measure is foolproof and you share content at your own risk.
-    </p>
+      <p>
+        Swinglet provides reporting and blocking tools. We may take action on reports including removing content, limiting features,
+        suspending, or permanently banning accounts.
+      </p>
+    </section>
 
-    <h2 class="text-2xl font-lora font-semibold mt-6">7. Safety & Offline Interactions</h2>
-    <p>
-      You are solely responsible for your interactions with other users, whether online or offline. Swinglet does not
-      conduct criminal background checks and does not guarantee the conduct or identity of any user. Use caution and
-      common sense when arranging meetings or sharing personal information.
-    </p>
+    <section id="content">
+      <h2>5. User Content</h2>
+      <p>
+        “User Content” includes information, text, images, posts, and messages you submit through the App.
+      </p>
+      <ul>
+        <li>You retain ownership of your User Content.</li>
+        <li>
+          You grant Swinglet a non-exclusive, worldwide, royalty-free license to host, store, reproduce, and display your User Content
+          <strong>only as needed</strong> to operate, provide, and improve the App (for example, displaying your post to other users).
+        </li>
+        <li>You represent that you have the rights and permissions necessary to share your User Content.</li>
+      </ul>
 
-    <h2 class="text-2xl font-lora font-semibold mt-6">8. Disclaimers</h2>
-    <p>
-      The App is provided on an “as is” and “as available” basis without warranties of any kind, whether express or
-      implied. To the maximum extent permitted by law, Swinglet disclaims all warranties, including fitness for a
-      particular purpose and non-infringement.
-    </p>
+      <p class="small">
+        Note: Screenshot protection may not work in all environments. Do not share anything you would not be comfortable being re-shared.
+      </p>
+    </section>
 
-    <h2 class="text-2xl font-lora font-semibold mt-6">9. Limitation of Liability</h2>
-    <p>
-      To the extent permitted by law, Swinglet shall not be liable for any indirect, incidental, consequential, or
-      punitive damages, or any loss of profits, data, or goodwill arising out of or related to your use of the App.
-    </p>
+    <section id="moderation">
+      <h2>6. Moderation, Enforcement &amp; Removal</h2>
+      <p>
+        Swinglet actively reviews reported content and may remove content or restrict accounts that violate these Terms or community guidelines.
+      </p>
+      <ul>
+        <li>We may remove or restrict content at our discretion to protect user safety and comply with law.</li>
+        <li>Repeated violations may result in permanent removal.</li>
+        <li>We may cooperate with law enforcement where required.</li>
+      </ul>
+    </section>
 
-    <h2 class="text-2xl font-lora font-semibold mt-6">10. Termination</h2>
-    <p>
-      We may suspend or terminate your access to the App at any time, with or without notice, if we believe you have
-      violated these Terms, created risk or legal exposure for us or others, or where required by law or regulation.
-      You may stop using the App at any time by deleting your account.
-    </p>
+    <section id="subscriptions">
+      <h2>7. Subscriptions &amp; Billing</h2>
+      <p>
+        Some features may require a paid subscription. Subscriptions are processed by Apple App Store or Google Play Store.
+      </p>
+      <ul>
+        <li>Payments and renewals are handled by Apple/Google under their terms.</li>
+        <li>We do not store your card or payment information.</li>
+        <li>To manage or cancel a subscription, use your Apple/Google account subscription settings.</li>
+      </ul>
+    </section>
 
-    <h2 class="text-2xl font-lora font-semibold mt-6">11. Governing Law & Jurisdiction</h2>
-    <p>
-      These Terms are governed by the laws of India. Any disputes shall be subject to the exclusive jurisdiction of the
-      courts of Gurgaon, Haryana, India.
-    </p>
+    <section id="privacy">
+      <h2>8. Privacy</h2>
+      <p>
+        Your use of the App is also governed by our <a href="/privacy.html">Privacy Policy</a>, which explains how we collect and use data.
+      </p>
+    </section>
 
-    <h2 class="text-2xl font-lora font-semibold mt-6">12. Changes to these Terms</h2>
-    <p>
-      We may update these Terms from time to time. We will post the updated version on this page and update the
-      “Effective Date” above. Continued use of the App after changes become effective constitutes your acceptance of the
-      revised Terms.
-    </p>
+    <section id="disclaimers">
+      <h2>9. Disclaimers</h2>
+      <ul>
+        <li>The App is provided on an “as is” and “as available” basis.</li>
+        <li>We do not conduct background checks and are not responsible for user conduct or offline interactions.</li>
+        <li>You are solely responsible for your interactions with other users and for maintaining your personal safety.</li>
+      </ul>
+    </section>
 
-    <h2 class="text-2xl font-lora font-semibold mt-6">13. Contact</h2>
-    <p>
-      For questions about these Terms, please contact:<br>
-      <strong>Email:</strong> support@swinglet.app
-    </p>
+    <section id="liability">
+      <h2>10. Limitation of Liability</h2>
+      <p>
+        To the maximum extent permitted by law, Swinglet and Kernel Platforms will not be liable for indirect, incidental, special,
+        consequential, or punitive damages, or for loss of profits, data, or goodwill, arising from your use of the App.
+      </p>
+    </section>
 
-    <p class="text-xs text-gray-400 mt-6">
-     
-    </p>
+    <section id="termination">
+      <h2>11. Termination</h2>
+      <p>
+        You may stop using the App at any time. We may suspend or terminate your access if we believe you have violated these Terms,
+        pose a safety risk, or where required by law.
+      </p>
+    </section>
+
+    <section id="changes">
+      <h2>12. Changes to These Terms</h2>
+      <p>
+        We may update these Terms from time to time. We will post the updated version and update the “Last Updated” date above.
+        Continued use of the App after changes constitutes acceptance of the updated Terms.
+      </p>
+    </section>
+
+    <section id="governing-law">
+      <h2>13. Governing Law &amp; Jurisdiction</h2>
+      <p>
+        These Terms are governed by the laws of India. Courts located in Gurgaon, Haryana, India shall have exclusive jurisdiction,
+        subject to applicable law.
+      </p>
+    </section>
+
+    <section id="contact">
+      <h2>14. Contact</h2>
+      <p>
+        For questions about these Terms, contact:
+        <a href="mailto:support@swinglet.app">support@swinglet.app</a>
+      </p>
+      <p class="small">
+        Operator: Kernel Platforms, Gurgaon, Haryana, India
+      </p>
+    </section>
+
+    <footer>
+      © 2026 Kernel Platforms. All rights reserved.
+    </footer>
   </main>
-
-  <footer class="border-t border-white/10 mt-10">
-    <div class="max-w-3xl mx-auto px-4 py-6 text-sm text-gray-400 flex flex-wrap justify-between gap-3">
-      <span>&copy; 2026 Kernel Platforms.</span>
-      <a href="/privacy.html" class="hover:text-rose-300">Privacy Policy</a>
-    </div>
-  </footer>
 </body>
 </html>
