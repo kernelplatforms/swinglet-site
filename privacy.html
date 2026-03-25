@@ -8,20 +8,15 @@
 
   <style>
     :root {
-      /* Align closer to your index.html dark palette */
-      --bg: #020617;           /* slate-950 */
+      --bg: #020617;
       --panel: rgba(255,255,255,0.05);
       --panel-2: rgba(255,255,255,0.03);
-      --text: rgba(226,232,240,0.96);   /* slate-200 */
-      --muted: rgba(148,163,184,0.92);  /* slate-400 */
+      --text: rgba(226,232,240,0.96);
+      --muted: rgba(148,163,184,0.92);
       --border: rgba(255,255,255,0.10);
-
-      /* Brand accent */
       --accent: #571432;
       --accent-hover: #7a1c48;
-
-      /* Accent text (more readable than pure accent on dark bg) */
-      --accent-soft: rgba(253, 164, 186, 0.95); /* rose-ish soft highlight */
+      --accent-soft: rgba(253, 164, 186, 0.95);
     }
 
     * { box-sizing: border-box; }
@@ -42,7 +37,6 @@
       padding: 28px 20px 36px;
     }
 
-    /* Simple top bar to match index feel */
     .topbar {
       position: sticky;
       top: 0;
@@ -52,6 +46,7 @@
       background: rgba(2,6,23,0.82);
       border-bottom: 1px solid var(--border);
     }
+
     .topbar-inner{
       max-width: 920px;
       margin: auto;
@@ -61,6 +56,7 @@
       justify-content: space-between;
       gap: 12px;
     }
+
     .brand {
       display:flex;
       align-items:center;
@@ -69,6 +65,7 @@
       font-weight: 700;
       letter-spacing: -0.01em;
     }
+
     .dot{
       width: 8px;
       height: 8px;
@@ -82,6 +79,7 @@
       text-decoration: none;
       font-weight: 500;
     }
+
     a:hover {
       color: rgba(255,255,255,0.95);
       text-decoration: underline;
@@ -98,6 +96,7 @@
       font-size: 14px;
       transition: 0.2s ease;
     }
+
     .back:hover {
       border-color: rgba(255,255,255,0.18);
       background: rgba(255,255,255,0.07);
@@ -122,7 +121,7 @@
     h3 {
       margin-top: 18px;
       font-size: 16px;
-      color: var(--accent-soft); /* readable highlight */
+      color: var(--accent-soft);
     }
 
     p { margin: 12px 0; color: var(--text); }
@@ -152,6 +151,7 @@
       margin-top: 16px;
       color: rgba(255,255,255,0.92);
     }
+
     .callout strong { color: rgba(255,255,255,0.98); }
 
     .small {
@@ -167,10 +167,10 @@
       font-size: 14px;
     }
 
-    /* nicer links in content */
     .content a {
       color: rgba(253,164,186,0.95);
     }
+
     .content a:hover {
       color: rgba(255,255,255,0.96);
     }
@@ -296,8 +296,30 @@
       </p>
     </section>
 
+    <section id="child-safety">
+      <h2>5. Child Safety</h2>
+      <p>
+        Swinglet has a zero-tolerance policy toward child sexual abuse and exploitation (CSAE) and child sexual abuse material (CSAM).
+      </p>
+      <ul>
+        <li>Users must be 18 years or older to use the App.</li>
+        <li>Any content involving minors in a sexual context is strictly prohibited.</li>
+        <li>Any suspected CSAE or CSAM content will be removed immediately.</li>
+        <li>Accounts involved in such activity will be permanently banned.</li>
+        <li>Where appropriate, we may report such activity to relevant law enforcement authorities.</li>
+      </ul>
+      <p>
+        Users can report harmful or inappropriate content through in-app reporting tools or by contacting
+        <a href="mailto:support@swinglet.app">support@swinglet.app</a>.
+      </p>
+      <p>
+        For more information, please see our
+        <a href="/child-safety.html">Child Safety Standards</a>.
+      </p>
+    </section>
+
     <section id="payments">
-      <h2>5. Subscriptions &amp; Payments</h2>
+      <h2>6. Subscriptions &amp; Payments</h2>
       <p>
         Premium features may be purchased through the Apple App Store and Google Play Store.
         <strong>All payments are processed directly by Apple or Google.</strong>
@@ -306,7 +328,7 @@
     </section>
 
     <section id="sharing">
-      <h2>6. Data Sharing</h2>
+      <h2>7. Data Sharing</h2>
       <p>We do not sell personal data.</p>
       <p>
         We may share limited data with service providers such as Firebase and cloud hosting partners
@@ -315,7 +337,7 @@
     </section>
 
     <section id="retention">
-      <h2>7. Data Retention</h2>
+      <h2>8. Data Retention</h2>
       <p>
         We retain personal data only as long as necessary to provide the App, maintain safety and moderation records,
         and comply with legal obligations.
@@ -335,7 +357,7 @@
     </section>
 
     <section id="rights">
-      <h2>8. Your Rights</h2>
+      <h2>9. Your Rights</h2>
       <p>
         Subject to applicable law, you may request access, correction, or deletion of your data by contacting:
         <a href="mailto:support@swinglet.app">support@swinglet.app</a>
@@ -343,7 +365,7 @@
     </section>
 
     <section id="security">
-      <h2>9. Security</h2>
+      <h2>10. Security</h2>
       <p>
         We use reasonable safeguards such as encryption, secure authentication, reporting tools, and admin moderation to safeguard user data.
         However, no system can guarantee absolute security.
@@ -351,7 +373,7 @@
     </section>
 
     <section id="international">
-      <h2>10. International Data Processing</h2>
+      <h2>11. International Data Processing</h2>
       <p>
         We use cloud service providers including Firebase, which may process data outside India.
         Where applicable, appropriate safeguards are implemented in accordance with applicable data protection laws.
@@ -359,7 +381,7 @@
     </section>
 
     <section id="grievance">
-      <h2>11. Grievance Officer</h2>
+      <h2>12. Grievance Officer</h2>
       <p>
         Naveen Yadav<br>
         Kernel Platforms<br>
