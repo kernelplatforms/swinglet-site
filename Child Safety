@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Child Safety Standards - Swinglet</title>
+
+  <style>
+    body {
+      margin: 0;
+      background: #020617;
+      color: #e2e8f0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto;
+      line-height: 1.7;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 30px 20px;
+    }
+    h1 { font-size: 32px; color: white; }
+    h2 { margin-top: 30px; border-bottom: 1px solid #334155; padding-bottom: 6px; }
+    a { color: #fda4ba; }
+    .card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 10px;
+      padding: 18px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+<div class="container">
+
+<h1>Child Safety Standards</h1>
+
+<p>
+Swinglet is committed to maintaining a safe and respectful environment. 
+We have a zero-tolerance policy for any form of child sexual abuse and exploitation (CSAE).
+</p>
+
+---
+
+<h2>1. Age Restriction</h2>
+<p>
+Swinglet is strictly intended for individuals aged 18 years or older. 
+We do not knowingly allow minors to create accounts or use the platform.
+Any account identified as underage will be immediately removed.
+</p>
+
+---
+
+<h2>2. Zero Tolerance for CSAE</h2>
+<div class="card">
+<p>
+Swinglet strictly prohibits:
+</p>
+<ul>
+<li>Any content involving minors in a sexual context</li>
+<li>Sexual exploitation or abuse of children</li>
+<li>Sharing, requesting, or distributing child sexual abuse material (CSAM)</li>
+<li>Any behavior that endangers minors</li>
+</ul>
+
+<p>
+Any violation will result in immediate account suspension and may be reported to relevant law enforcement authorities.
+</p>
+</div>
+
+---
+
+<h2>3. Content Moderation</h2>
+<p>
+Swinglet actively moderates content through:
+</p>
+<ul>
+<li>User reporting tools</li>
+<li>Manual review via admin moderation</li>
+<li>Immediate removal of violating content</li>
+</ul>
+
+---
+
+<h2>4. Reporting Mechanism</h2>
+<p>
+Users can report inappropriate or harmful content directly within the app.
+</p>
+
+<p>
+Additionally, users can contact us at:
+<br>
+<a href="mailto:support@swinglet.app">support@swinglet.app</a>
+</p>
+
+---
+
+<h2>5. Enforcement</h2>
+<p>
+If CSAE-related content or behavior is detected:
+</p>
+<ul>
+<li>Content will be removed immediately</li>
+<li>Accounts will be permanently banned</li>
+<li>Reports may be escalated to law enforcement authorities</li>
+</ul>
+
+---
+
+<h2>6. Compliance</h2>
+<p>
+Swinglet complies with applicable child safety laws and regulations in India and internationally.
+</p>
+
+---
+
+<footer style="margin-top:40px; color:#94a3b8;">
+© 2026 Kernel Platforms
+</footer>
+
+</div>
+</body>
+</html>
